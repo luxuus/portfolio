@@ -189,7 +189,7 @@ main .ctn__flex {
   -o-border-image: linear-gradient(to right, rgb(8, 8, 8) 10%, rgb(255, 255, 255), rgb(8, 8, 8) 90%) 1;
      border-image: linear-gradient(to right, rgb(8, 8, 8) 10%, rgb(255, 255, 255), rgb(8, 8, 8) 90%) 1;
   border-top: 1px solid;
-  height: 100vh;
+  min-height: 100vh;
   flex-wrap: wrap;
   overflow: hidden;
 }
@@ -330,8 +330,8 @@ main .ctn__flex .about__aside {
 }
 main .ctn__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 200px 150px repeat(5, 60px);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 200px auto repeat(5, 60px) 85px;
   gap: 20px 30px;
   padding: 50px 200px;
   font-family: "Source Sans 3", sans-serif;
@@ -354,7 +354,7 @@ main .ctn__grid .projects__list--header {
   padding-left: 10px;
 }
 main .ctn__grid .projects__list--body--bio {
-  grid-column: 2/3;
+  grid-column: 2;
   font-family: "Source Sans 3", sans-serif;
   color: var(--clr-text);
   font-size: 1.2rem;
@@ -424,7 +424,7 @@ main .ctn__grid .project {
   z-index: 2;
   display: none;
   grid-template-columns: subgrid;
-  grid-template-rows: min-content min-content auto;
+  grid-template-rows: repeat(4, min-content);
   padding: 30px;
   gap: 20px;
 }
@@ -514,5 +514,21 @@ main .ctn__grid .project__image img {
 @media screen and (max-width: 1220px) {
   main .ctn__flex .about .about__header h2 {
     font-size: 6rem;
+  }
+  main .ctn__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px auto repeat(5, 60px) 85px auto;
+  }
+  main .ctn__grid .projects__list--header,
+  main .ctn__grid .projects__list--body--bio,
+  main .ctn__grid label,
+  main .ctn__grid input {
+    grid-column: 1;
+  }
+  main .ctn__grid .project__image {
+    grid-row: 8/-1;
+  }
+  main .ctn__grid .project {
+    grid-row: 9/-1;
   }
 }/*# sourceMappingURL=style.css.map */
