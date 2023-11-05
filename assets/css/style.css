@@ -184,7 +184,7 @@ main .ctn__flex {
   align-items: center;
   gap: 120px;
   width: 100%;
-  padding: 50px 200px;
+  padding: 50px 10vw;
   background: linear-gradient(to bottom, black, rgb(8, 8, 8) 25%);
   -o-border-image: linear-gradient(to right, rgb(8, 8, 8) 10%, rgb(255, 255, 255), rgb(8, 8, 8) 90%) 1;
      border-image: linear-gradient(to right, rgb(8, 8, 8) 10%, rgb(255, 255, 255), rgb(8, 8, 8) 90%) 1;
@@ -333,7 +333,7 @@ main .ctn__grid {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto repeat(5, 60px) 85px;
   gap: 20px 30px;
-  padding: 50px 200px;
+  padding: 50px 10vw;
   font-family: "Source Sans 3", sans-serif;
   background: rgb(8, 8, 8);
   -o-border-image: linear-gradient(to right, rgb(8, 8, 8) 10%, rgb(255, 255, 255), rgb(8, 8, 8) 90%) 1;
@@ -504,7 +504,6 @@ main .ctn__skills {
   border-top: 1px solid;
   min-height: 100vh;
   flex-wrap: wrap;
-  overflow: hidden;
 }
 main .ctn__skills .skills {
   display: flex;
@@ -546,6 +545,8 @@ main .ctn__skills .skills__body .list__skills {
   grid-auto-rows: 125px;
   gap: 40px;
   transition: grid-template-columns 0.225s ease-out;
+  padding-bottom: 10px;
+  overflow: hidden;
 }
 main .ctn__skills .skills__body .list__skills:has(.html:checked) {
   grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -936,6 +937,12 @@ footer {
   }
 }
 @media screen and (max-width: 1220px) {
+  main .ctn__skills .skills__body .list__skills {
+    gap: 10px;
+  }
+  main .ctn__skills .skills__body .list__skills .list__skills--item q {
+    font-size: 0.9rem;
+  }
   main .ctn__flex .about .about__header h2,
   main .ctn__grid .projects__list--header {
     font-size: 6rem;
